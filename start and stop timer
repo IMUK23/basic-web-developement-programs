@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>start stop timer</title>
+</head>
+
+<body>
+<div id="showtimer"></div>
+<br>
+<button onClick="stopTimer()">Stop Timer</button>
+<script>
+var myInterval=setInterval(function(){timer()},1000);
+var myButton=document.getElementsByTagName("button")[0];
+function timer() {
+	var myDate= new Date();
+	var myTime=myDate.toLocaleTimeString();
+	document.getElementById("showtimer").innerHTML=myTime;
+	}
+function stopTimer() {
+	clearInterval(myInterval);
+	myButton.innerHTML="start Timer";
+	myButton.setAttribute("onclick","startTimer()");
+	}
+function startTimer() {
+	var myInterval=setInterval(function(){timer()},1000);
+	myButton.innerHTML="stop Timer";
+	myButton.setAttribute("onclick","stopTimer()");
+	}			
+</script>
+</body>
+</html>
