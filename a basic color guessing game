@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>color guessing game</title>
+<style>
+#Header{
+	text-align:center;
+	font-size:24px;
+	text-shadow:#030303 2px 2px;
+	color:#BD292C;
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	
+	}
+	#label{
+		height:40x;	
+		width:400px;
+		border:#FFFFFF;}
+        
+	#color_list{
+		width:300px;
+		}
+    #box{
+		width:200px;
+		height:200px;
+		display:none;}
+</style>
+</head>
+
+<body>
+<div>
+<p id="Header"><strong> This is the Color Guessing Game</strong> </p>
+ </div><br>
+<div>
+<input id="label" type="text" value="Please Select The color from the given list"> 
+
+<select id="color_list">
+<option value="0">Select the color from the given list</option>
+<option value="1">Red</option>
+<option value="2">Orange</option>
+<option value="3">Blue</option>
+<option value="4">Green</option>
+</select>
+<br>
+<br>
+<button id="buttonid">Check the Color</button>
+</div>
+<div id="box">
+</div>
+<script>
+
+var mycolor=parseInt(document.getElementById("color_list").value);
+
+//code for conditions 
+document.getElementById("buttonid").onclick= function(){
+mycolor=parseInt(document.getElementById("color_list").value);
+var computercolor= (Math.floor(Math.random()*4+1));
+ 
+if(computercolor==1)
+{
+	
+	document.getElementById("box").style.display="block";
+	document.getElementById("box").style.backgroundColor="red";
+if(computercolor==mycolor)
+{alert("Congratulation you guessed the right color , The color is red");
+}
+else
+{alert("Sorry you guessed the wrong color , The color is red");
+}
+}
+else if(computercolor==2)
+{
+		document.getElementById("box").style.display="block";
+	document.getElementById("box").style.backgroundColor="orange";
+if(computercolor==mycolor)
+{alert("Congratulation you guessed the right color , The color is orange");
+}
+else
+{alert("Sorry you guessed the wrong color , The color is orange");
+}
+	}
+else if(computercolor==3)
+{
+	
+		document.getElementById("box").style.display="block";
+	document.getElementById("box").style.backgroundColor="blue";
+if(computercolor==mycolor)
+{alert("Congratulation you guessed the right color , The color is blue ");
+}
+else
+{alert("Sorry you guessed the wrong color , The color is is blue");
+}
+	}
+else
+{document.getElementById("box").style.display="block";
+	document.getElementById("box").style.backgroundColor="green";
+if(computercolor==mycolor)
+{alert("Congratulation you guessed the right color , The color is green " );
+}
+else
+{alert("Sorry you guessed the wrong color , The color is green");
+}
+	}
+
+}
+</script>
+</body>
+</html>
